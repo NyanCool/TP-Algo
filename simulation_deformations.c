@@ -23,7 +23,7 @@ int main()
     Position* paquet = simuler_deformations(nombre_positions,
         nombre_deformations, simulation);
     printf("terminee.\n");
-
+ss
 
     const char* nom_fichier = "simulation_deformations.dat";
     printf("Ecriture du paquet de deformations dans %s... ", nom_fichier);
