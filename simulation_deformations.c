@@ -14,8 +14,7 @@ int main()
     int nombre_deformations = NOMBRE_DEFORMATIONS;
     Simulation simulation = UNIFORME;
     srand( time(NULL));
-    Alerte alerte;
-
+    int max;
     int temps_ecoule; /* pour chronométrer */
     printf("Simulation de %i deformations sur %i positions, configuration "
         "%i... ", nombre_deformations, nombre_positions, simulation);
