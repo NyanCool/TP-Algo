@@ -151,33 +151,4 @@ void fct_tritableau(Position* paquet, int taillepaquet)
 
      }
 }
-Alerte* init_alerte(Alerte* alerte, int nombre_deformations)
-{
-    int i;
-    for(i=0; i<=nombre_deformations;i++)
-    {
-        alerte = malloc(sizeof(Alerte)*nombre_deformations);
-        alerte->nombre_deformations_locales=0;
-        alerte->position=0;
-    }
-    return alerte;
-}
 
-Alerte* nb_deformation_pos (Position* paquet, int nombre_deformations)
-{
-    Alerte* alerte = malloc(sizeof(alerte)*nombre_deformations);
-    int i, j;
-    for (i=0; i<nombre_deformations; i++)
-     {
-        for(j=i; j<nombre_deformations; j++)
-        {
-            if(paquet[j]== paquet[i])
-            {
-                alerte->position = paquet[i];
-                alerte->nombre_deformations_locales++;
-            }
-        }
-     }
-
-     return alerte;
-}
