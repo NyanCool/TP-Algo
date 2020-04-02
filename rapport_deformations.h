@@ -37,4 +37,4 @@ Position* simuler_deformations(Position nombre_positions,
 
 /* Libère la mémoire utilisée par un paquet de déformations */
 void detruire_deformations(Position* paquet);
-void fct_tricroitableau(Position paquet, int taillepaquet);
+void fct_tritableau(Position* paquet, int taillepaquet);
