@@ -152,3 +152,36 @@ void fct_tritableau(Position* paquet, int taillepaquet)
      }
 }
 
+int max_defrom(Position* paquet, int taillepaquet)
+{
+    int i, max;
+    max = paquet[0];
+    for (i=0; i<taillepaquet; i++)
+    {
+        if (max<paquet[i])
+        {
+           max = paquet[i];
+           printf("max = %i",paquet[i]);
+        }
+    }
+    return max;
+}
+
+void compte_doublon(Position* paquet,int taillepaquet, int max, int* doublon)
+{
+    int i,j;
+    for(j=0;j<max;j++)
+    {
+        doublon[j]=0;
+    }
+    for(i=0; i<taillepaquet; i++)
+    {
+        for(j=1; j<=max; j++)
+        {
+            if(paquet[i]==j)
+            {
+                doublon[j]++;
+            }
+        }
+    }
+}

@@ -14,8 +14,7 @@ int main()
     int nombre_deformations = NOMBRE_DEFORMATIONS;
     Simulation simulation = UNIFORME;
     srand( time(NULL));
-    Alerte alerte;
-
+    int max;
     int temps_ecoule; /* pour chronométrer */
     printf("Simulation de %i deformations sur %i positions, configuration "
         "%i... ", nombre_deformations, nombre_positions, simulation);
@@ -39,14 +38,33 @@ int main()
     printf("Temps ecoule : %i ms.\n", temps_ecoule);
 
     int j;
-    for(j=0;j<=10000;j++){
+
+    max= max_defrom(paquet, 10);
+
+    for(j=0;j<=100;j++){
         printf("%i\n",paquet[j]);
     }
-    fct_tritableau(paquet,10000+1);
+
+    fct_tritableau(paquet,10001);
+
     printf("\n");
     printf("\n");
-    for(j=0;j<=10000;j++){
+
+    for(j=0;j<=100;j++){
         printf("%i\n",paquet[j]);
+    }
+
+    int db[max];
+
+    printf("\n\n");
+
+    compte_doublon(paquet,100,max,db);
+
+    for(j=0;j<=max;j++){
+        if(db[j]!=0)
+        {
+            printf("db n %i = %i\n", j, db[j]);
+        }
     }
 
     detruire_deformations(paquet);
