@@ -128,7 +128,7 @@ void detruire_deformations(Position* paquet)
     free(paquet);
 }
 
-void fct_tritableau(Position paquet, int taillepaquet)
+void fct_tritableau(Position* paquet, int taillepaquet)
 {
      int valeurtemporaire, i, j;
 
