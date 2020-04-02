@@ -128,7 +128,7 @@ void detruire_deformations(Position* paquet)
     free(paquet);
 }
 
-void fct_tritableau(Position* paquet, int taillepaquet)
+void fct_tritableau(Position* paquet, int taillepaquet)/* Nous trions le tableau de paquet dans l'odre croissant à l'aide de cette fonction afin de faciliter le comptage des déformations*/
 {
      int valeurtemporaire, i, j;
 
@@ -152,7 +152,7 @@ void fct_tritableau(Position* paquet, int taillepaquet)
      }
 }
 
-int max_defrom(Position* paquet, int taillepaquet)
+int max_defrom(Position* paquet, int taillepaquet)/*Ici nous cherchons la déformations la plus loin de la position 0*/
 {
     int i, max;
     max = paquet[0];
@@ -167,7 +167,7 @@ int max_defrom(Position* paquet, int taillepaquet)
     return max;
 }
 
-void compte_doublon(Position* paquet,int taillepaquet, int max, int* doublon)
+void compte_doublon(Position* paquet,int taillepaquet, int max, int* doublon)/* Dans cette fonction nous comptons les doublons à partir du tableau paquet, qui a été trier ultérieurement*/
 {
     int i,j;
     for(j=0;j<max;j++)
@@ -184,4 +184,20 @@ void compte_doublon(Position* paquet,int taillepaquet, int max, int* doublon)
             }
         }
     }
+}
+int alerte(int* doublon, int max, int pos) /*On a créer ici une fonction qui compte le nombre de déformation sur les 100 prochaines sections de câble*/
+{
+    int i, nb_deform;
+    for(i=pos; i<=pos+100;i++)
+    {
+        if(doublon[i]!=0)                   /*pour chaque déformation, c'est à dire que la valeur doublon [i] est différent de 0, on ajoute 1 à nb_defrom*/
+        {
+            nb_deform =nb_deform+doublon[i];
+        }
+    }
+    if(nb_deform>=100)
+    {
+        return 1;
+    }
+    return 0;
 }
