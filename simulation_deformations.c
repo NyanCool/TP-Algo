@@ -46,7 +46,7 @@ int main()
         printf("%i\n",paquet[j]);
     }
 
-    fct_tritableau(paquet,10001);
+    fct_tritableau(paquet,taillepaquet);
 
     printf("\n");
     printf("\n");
