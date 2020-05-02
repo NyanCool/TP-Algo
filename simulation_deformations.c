@@ -40,7 +40,7 @@ int main()
 
     int j;
 
-    max= max_defrom(paquet, taillepaquet);
+    max= max_deform(paquet, taillepaquet);
 
     for(j=0;j<=taillepaquet;j++){
         printf("%i\n",paquet[j]);
