@@ -15,6 +15,7 @@ int main()
     Simulation simulation = UNIFORME;
     srand( time(NULL));
     int max;
+    int taillepaquet = 1000;
     int temps_ecoule; /* pour chronométrer */
     printf("Simulation de %i deformations sur %i positions, configuration "
         "%i... ", nombre_deformations, nombre_positions, simulation);
@@ -39,9 +40,9 @@ int main()
 
     int j;
 
-    max= max_defrom(paquet, 10);
+    max= max_defrom(paquet, taillepaquet);
 
-    for(j=0;j<=100;j++){
+    for(j=0;j<=taillepaquet;j++){
         printf("%i\n",paquet[j]);
     }
 
@@ -50,7 +51,7 @@ int main()
     printf("\n");
     printf("\n");
 
-    for(j=0;j<=100;j++){
+    for(j=0;j<=taillepaquet;j++){
         printf("%i\n",paquet[j]);
     }
 
@@ -58,7 +59,7 @@ int main()
 
     printf("\n\n");
 
-    compte_doublon(paquet,100,max,db);
+    compte_doublon(paquet,taillepaquet,max,db);
 
     for(j=0;j<=max;j++){
         if(db[j]!=0)
