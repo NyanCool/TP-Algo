@@ -152,7 +152,7 @@ void fct_tritableau(Position* paquet, int taillepaquet)/* Nous trions le tableau
      }
 }
 
-int max_defrom(Position* paquet, int taillepaquet)/*Ici nous cherchons la déformations la plus loin de la position 0*/
+int max_deform(Position* paquet, int taillepaquet)/*Ici nous cherchons la déformations la plus loin de la position 0*/
 {
     int i, max;
     max = paquet[0];
