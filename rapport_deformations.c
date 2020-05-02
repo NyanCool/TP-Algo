@@ -161,7 +161,6 @@ int max_deform(Position* paquet, int taillepaquet)/*Ici nous cherchons la défor
         if (max<paquet[i])
         {
            max = paquet[i];
-           printf("max = %i",paquet[i]);
         }
     }
     return max;
